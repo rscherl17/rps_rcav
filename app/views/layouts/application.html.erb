@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>RockPaperScissors</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <link rel="font_awesome" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" />
+  <script src="/assets/application-25bd6b47ad2ef49757a639cd9dc9d7c4b137f7a0bf03bb8d13757d905d6dfcef.js"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="87qAu7be1auscwPBv5fHkkagjwiRJAw4dMB+Sl3jQE5iuEfcrDRz1M77nGLU0sTpT34tFMQt0+ywV57LAiZeDw==" />
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <style>
     .move-icon {
@@ -29,17 +31,19 @@
       </div>
 
     <hr>
-    <div class = "row">
-      <div class = "col-md-4 col-md-offset-2 col-xs-6">
-        <div class = "panel panel-success">
-          <div class = "panel-heading">
-            <h2 class = "panel-title text-center"> <%=yield%> </h2>
-          </div>
-          <div class = "panel-body text-center">
-            <i class = "fa move-icon fa-hand-rock-o"></i>
-          </div>
+    <div class="row">
+    <div class="col-md-4 col-md-offset-2 col-xs-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h2 class="panel-title text-center">
+            <%= @user_move %>
+          </h2>
+        </div>
+        <div class="panel-body text-center">
+          <i class="fa move-icon <%= @hand_user %>"></i>
         </div>
       </div>
+    </div>
 
     <div class="col-md-4 col-xs-6">
       <div class="panel panel-danger">
@@ -47,7 +51,7 @@
           <h2 class="panel-title text-center"> <%= @computer_move %> </h2>
         </div>
         <div class = "panel-body text-center">
-          <i class = "fa move-icon fa-hand-paper-o"></i>
+          <i class = "fa move-icon <%= @hand %>"></i>
         </div>
       </div>
     </div>
@@ -58,8 +62,8 @@
     <div class="well text-center">
       <h1>
 
-        <span class="label label-danger">
-          You <%= @outcome %>
+        <span class="label <%= @label %>">
+          You <%= @outcome %>!
         </span>
       </h1>
     </div>
